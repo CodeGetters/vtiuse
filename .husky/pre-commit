@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "---------   代码预检查   ---------"
+
+echo "--------- code precheck ---------"
+
+npx --no-install lint-staged

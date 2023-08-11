@@ -1,0 +1,45 @@
+{
+  "name": "vtiuse",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "author": {
+    "name": "JohnsonXIn"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "format": "prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}",
+    "prepare": "husky install",
+    "cz": "git cz"
+  },
+  "lint-staged": {
+    "*.{js,vue,ts,jsx,tsx}": [
+      "prettier --write"
+    ],
+    "*.{html,css,less,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5",
+    "cz-git": "^1.7.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.1",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0"
+  }
+}
