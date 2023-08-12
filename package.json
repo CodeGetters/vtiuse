@@ -1,10 +1,24 @@
 {
   "name": "vtiuse",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Project template based on vue3 + ts",
   "type": "module",
-  "author": {
-    "name": "JohnsonXIn"
+  "license": "MIT",
+  "author": "JohnsonXin",
+  "bugs": "https://github.com/CodeGetters/vtiuse/issues",
+  "keywords": [
+    "vue3",
+    "TS",
+    "template",
+    "Pina",
+    "vue-router",
+    "i18n",
+    "vueuse"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CodeGetters/vtiuse.git"
   },
   "scripts": {
     "dev": "vite",
@@ -31,15 +45,15 @@
     }
   },
   "devDependencies": {
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "vue-tsc": "^1.8.5",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@vitejs/plugin-vue": "^4.2.3",
     "cz-git": "^1.7.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "prettier": "^3.0.1",
-    "@vitejs/plugin-vue": "^4.2.3",
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0"
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5"
   }
 }

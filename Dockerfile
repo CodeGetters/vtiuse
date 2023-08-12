@@ -10,6 +10,9 @@ RUN yarn build
 
 FROM nginx:stable-alpine as production-stage
 
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone
+
 COPY --from=build-stage /vtiuse/dist /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
