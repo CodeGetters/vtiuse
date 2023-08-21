@@ -1,4 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted, onBeforeMount } from "vue";
+
+const loading = document.querySelector("#loading");
+
+onBeforeMount(() => {
+  if (loading) {
+    loading.classList.add("loading");
+  }
+});
+
+onMounted(() => {
+  setTimeout(() => {
+    if (loading) {
+      loading.classList.remove("loading");
+    }
+  }, 3000);
+});
+</script>
 
 <template>
   <router-view v-slot="{ Component }">
