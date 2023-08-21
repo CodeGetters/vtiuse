@@ -1,0 +1,10 @@
+@import "./scss/init.scss";
+
+@font-face {
+  font-family: "CascadiaCode";
+  src: url("../fonts/CascadiaCode.ttf");
+}
+
+body {
+  font-family: "CascadiaCode";
+}
