@@ -24,9 +24,3 @@ const toggleDark = useToggle(isDark);
     <span bg="blue-400 hover:blue-500">预设</span>
   </div>
 </template>
-
-<style>
-.home {
-  font-family: "CascadiaCode";
-}
-</style>
