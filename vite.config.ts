@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig, loadEnv } from "vite";
 import { resolve } from "node:path";
 import vue from "@vitejs/plugin-vue";
@@ -15,7 +17,12 @@ export default ({ mode }) => {
     resolve: {
       alias: {
         "@": resolve(__dirname, "src"),
+        "vue-i18n": "vue-i18n/dist/vue-i18n.cjs.prod.js",
       },
+    },
+    test: {
+      include: ["src/test/*.test.ts"],
+      globals: true,
     },
     build: {
       rollupOptions: {
