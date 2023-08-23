@@ -21,6 +21,18 @@ export default ({ mode }) => {
       },
     },
     test: {
+      environment: "happy-dom",
+      coverage: {
+        provider: "istanbul",
+        reporter: ["text", "json", "html"],
+        reportsDirectory: "./coverage",
+        perFile: true,
+        lines: 75,
+        functions: 75,
+        branches: 75,
+        statements: 75,
+      },
+      open: true,
       include: ["src/test/*.test.ts"],
       globals: true,
     },
