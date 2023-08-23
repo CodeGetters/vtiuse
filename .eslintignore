@@ -1,3 +1,3 @@
 dist
 src/shims-vue.d.ts
-coverage
+coverage/*
