@@ -30,6 +30,9 @@ yarn format
 # quick commit
 yarn cz
 
+# test
+yarn coverage
+
 ```
 
 ## Features

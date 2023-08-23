@@ -29,6 +29,7 @@
     "cz": "git cz",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
+    "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix"
   },
   "lint-staged": {

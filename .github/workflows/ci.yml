@@ -53,17 +53,17 @@ jobs:
 
       - name: Typecheck
         run: yarn typecheck
-  # test:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 18.x
-  #         cache: yarn
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: yarn
 
-  #     - name: Install
-  #       run: yarn install
+      - name: Install
+        run: yarn install
 
-  #     - name: Test
-  #       run: yarn test
+      - name: Test
+        run: yarn coverage
