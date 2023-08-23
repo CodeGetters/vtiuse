@@ -28,6 +28,7 @@
     "prepare": "husky install",
     "cz": "git cz",
     "test": "vitest",
+    "typecheck": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix"
   },
   "lint-staged": {
