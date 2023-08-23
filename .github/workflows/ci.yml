@@ -1,16 +1,29 @@
 name: ci
 
 on:
-  # master 分支 push 后触发
   push:
     branches:
       - dev
-  # master 分支 pull_request 后触发
   pull_request:
     branches:
       - main
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: Install
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -40,24 +53,17 @@ jobs:
 
       - name: Typecheck
         run: yarn typecheck
-
   # test:
-  #   runs-on: ${{ matrix.os }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18.x
+  #         cache: yarn
 
-  #   strategy:
-  #     matrix:
-  #       node-version: [16.x, 18.x]
-  #       os: [ubuntu-latest]
-  #     fail-fast: false
-  # steps:
-  #   - uses: actions/checkout@v3
-  #   - uses: pnpm/action-setup@v2
-  #   - name: Use Node.js ${{ matrix.node-version }}
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: ${{ matrix.node-version }}
-  #       registry-url: https://registry.npmjs.org/
-  #       cache: pnpm
+  #     - name: Install
+  #       run: yarn install
 
-  #   - run: pnpm install
-  #   - run: pnpm run test:unit
+  #     - name: Test
+  #       run: yarn test
