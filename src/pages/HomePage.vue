@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
+import { toggleDark } from "@/utils/toggleDark";
+
 const { locale, t } = useI18n();
-import { useDark, useToggle } from "@vueuse/core";
 
 /**
  * @description 语言切换
@@ -10,17 +11,22 @@ const changeLang = () => {
   locale.value === "zh" ? (locale.value = "en") : (locale.value = "zh");
 };
 
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
+console.log(locale.value);
 </script>
 
 <template>
-  <div class="home .dark:bg-black .dark:text-#fff">
-    <span class="text-red">home</span>
-    <span class="bg-red" @click="changeLang()">{{ t("hello") }}</span>
-    <router-link to="/404">notFound</router-link>
-    <span @click="toggleDark()">主题切换</span>
-    <span text-red>预设</span>
-    <span bg="blue-400 hover:blue-500">预设</span>
+  <div
+    class="home .dark:bg-black .dark:text-#fff text-18px h100vh flex flex-col justify-center items-center"
+  >
+    <div class="text-red">{{ t("hello") }}</div>
+    <div class="container flex flex-row items-center justify-center">
+      <button @click="toggleDark">
+        <div i-carbon-sun dark:i-carbon-moon cursor-pointer />
+      </button>
+      <button @click="changeLang()" cursor-pointer>切换语言</button>
+      <router-link to="/404">
+        <button cursor-pointer>404</button>
+      </router-link>
+    </div>
   </div>
 </template>
