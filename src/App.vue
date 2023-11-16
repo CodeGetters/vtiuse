@@ -9,7 +9,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <router-view />
+  <routerView />
 </template>
 
 <style lang="scss">

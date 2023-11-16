@@ -67,13 +67,24 @@ export default ({ mode }) => {
       vue(),
       UnoCSS(),
       autoImport({
+        include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md$/],
         imports: [
+          "vue",
           "pinia",
           "vue-i18n",
           "vue-router",
           "@vueuse/core",
           "@vue/composition-api",
         ],
+        eslintrc: {
+          enabled: true,
+          filepath: "./.eslintrc-auto-import.json",
+          globalsPropValue: true,
+        },
+        defaultExportByFilename: false,
+        dts: true,
+        vueTemplate: false,
+        injectAtEnd: true,
       }),
       devTools(),
       tsChecker({
