@@ -12,7 +12,9 @@ generateApi({
   unwrapResponseData: false,
   hooks: {
     onCreateRoute: (routeData) => {
-      routeData.request.path = `/api/back${routeData.request.path}`;
+      routeData.request.path = `/api${routeData.request.path}`;
+      routeData.raw.moduleName = routeData.request.path.split("/")[3];
+      routeData.namespace = routeData.raw.moduleName;
     },
   },
 });
