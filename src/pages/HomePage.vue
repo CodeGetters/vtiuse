@@ -21,7 +21,8 @@ console.log(locale.value);
     <div class="text-red">{{ t("hello") }}</div>
     <div class="container flex flex-row items-center justify-center">
       <button @click="toggleDark">
-        <div i-carbon-sun dark:i-carbon-moon cursor-pointer />
+        <!-- <div i-carbon-sun dark:i-carbon-moon cursor-pointer /> -->
+        theme
       </button>
       <button @click="changeLang()" cursor-pointer>切换语言</button>
       <router-link to="/404">
